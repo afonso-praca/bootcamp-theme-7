@@ -1,15 +1,141 @@
 {
-  "store.home": { 
+  "store.home": {
     "blocks": [
-      "rich-text"
+      "flex-layout.row#banner",
+      "shelf#new-arrivals",
+      "flex-layout.row#video",
+      "shelf#clearance",
+      "flex-layout.row#newsletter"
     ]
   },
-  "rich-text": { 
-    "props": { 
-      "text": "VTEX Store Framework",
+
+  "flex-layout.row#video": {
+    "children": [
+      "video#home"
+    ]
+  },
+
+  "video#home": {
+    "props": {
+      "width": "100%",
+      "height": "600px",
+      "loop": true,
+      "autoPlay": true,
+      "muted": true,
+      "src": "https://www.youtube.com/watch?v=v4Ews9zVGm0",
+      "blockClass": "videoEl"
+    }
+  },
+
+
+  "carousel#home": {
+    "props": {
+      "autoplay": true,
+      "autoplaySpeed": 4,
+      "banners": [
+        {
+          "image": "assets/main-banner.jpg",
+          "customInternalURL": "/"
+        }
+      ],
+      "height": 440,
+      "showArrows": true,
+      "showDots": true
+    }
+  },
+
+  "flex-layout.row#banner": {
+    "children": [
+      "carousel#home"
+    ]
+  },
+
+  "shelf#new-arrivals": {
+    "blocks": ["product-summary.shelf"],
+    "props": {
+      "orderBy": "OrderByPriceDESC",
+      "paginationDotsVisibility": "desktopOnly",
+      "collection": "146",
+      "productList": {
+        "maxItems": 8,
+        "itemsPerPage": 4,
+        "minItemsPerPage": 1.5,
+        "scroll": "BY_PAGE",
+        "arrows": true,
+        "titleText": "Brand new arrivals"
+      }
+    }
+  },
+
+  "shelf#clearance": {
+    "blocks": ["product-summary.shelf"],
+    "props": {
+      "orderBy": "OrderByPriceDESC",
+      "paginationDotsVisibility": "desktopOnly",
+      "collection": "147",
+      "productList": {
+        "maxItems": 8,
+        "itemsPerPage": 4,
+        "minItemsPerPage": 1.5,
+        "scroll": "BY_PAGE",
+        "arrows": true,
+        "titleText": "Guitars to rock"
+      }
+    }
+  },
+
+  "flex-layout.row#newsletter": {
+    "children": [
+      "flex-layout.col#newsletter"
+    ],
+    "props": {
+      "blockClass": "newsletter",
+      "marginTop": 5
+    }
+  },
+  "flex-layout.col#newsletter": {
+    "children": [
+      "rich-text#newsletter",
+      "rich-text#style-text",
+      "flex-layout.row#newsletter-container"
+    ],
+    "props": {
+      "blockClass": "newsletter"
+    }
+  },
+  "rich-text#style-text": {
+    "props": {
       "textAlignment": "CENTER",
       "textPosition": "CENTER",
-      "font": "t-heading-1"
+      "text": "Be first to receive exclusive offers and updates",
+      "blockClass": "newsletter",
+      "textColor": "c-muted-1"
+    }
+  },
+
+  "rich-text#newsletter": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Join our mailing list",
+      "textColor": "c-muted-1",
+      "font": "t-heading-2"
+    }
+  },
+
+  "flex-layout.row#newsletter-container": {
+    "children": [
+      "newsletter#home"
+    ],
+    "props": {
+      "blockClass": "newsletterContainer"
+    }
+  },
+
+  "newsletter#home": {
+    "props": {
+      "hideLabel": true,
+      "placeholder": ""
     }
   }
 }

@@ -25,12 +25,27 @@
   "product-summary.shelf": {
     "children": [
       "product-summary-add-to-list-button",
+      "stack-layout#prodsum",
       "product-summary-name",
-      "product-rating-inline",
       "product-summary-space",
       "product-summary-price",
-      "product-identifier.summary",
       "add-to-cart-button"
     ]
+  },
+
+  "stack-layout#prodsum": {
+    "children": [
+      "product-summary-image",
+      "product-summary-specification-badges"
+    ]
+  },
+
+  "product-summary-specification-badges": {
+    "props": {
+      "specificationGroupName": "Group",
+      "specificationName": "On Sale",
+      "visibleWhen": "True",
+      "displayValue": "SPECIFICATION_NAME"
+    }
   }
 }
