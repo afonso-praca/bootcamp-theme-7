@@ -1,0 +1,8 @@
+{
+    "store.custom#ps-call": {
+        "blocks": ["ps-call"],
+        "props": {
+          "blockClass": "ps-call"
+        }
+      }
+}
