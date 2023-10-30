@@ -2,25 +2,165 @@
   "footer": {
     "blocks": ["footer-layout.desktop", "footer-layout.mobile"]
   },
-  "footer-layout.desktop": { 
+  "footer-layout.desktop": {
     "children": [
-      "flex-layout.row#footer"
+      "flex-layout.row#footer-1-desktop"
     ]
   },
-  "footer-layout.mobile": { 
+  "flex-layout.row#footer-1-desktop": {
     "children": [
-      "flex-layout.row#footer"
-    ]
-  },
-  "flex-layout.row#footer": { 
-    "children": [
-      "image"
-    ]
-  },
-  "image": {
+      "flex-layout.col#footer-left-desktop",
+      "flex-layout.col#footer-right-desktop"
+    ],
     "props": {
-      "width": 100,
-      "src": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg"
+      "blockClass": "footer-row",
+      "paddingTop": 7,
+      "paddingBottom": 7
+    }
+  },
+
+  "flex-layout.col#footer-left-desktop": {
+    "children": ["vtex.menu@2.x:menu#footer-desktop-menu"],
+    "props": {
+      "blockClass": "footer-menu"
+    }
+  },
+
+  "vtex.menu@2.x:menu#footer-desktop-menu": {
+    "children": [
+      "menu-item#guitars",
+      "menu-item#effects",
+      "menu-item#photography",
+      "menu-item#stores"
+    ]
+  },
+
+  "flex-layout.col#footer-right-desktop": {
+    "children": ["accepted-payment-methods"],
+    "props": {
+      "blockClass": "footer-payment-methods"
+    }
+  },
+
+  "accepted-payment-methods": {
+    "props": {
+      "paymentMethods": ["MasterCard", "Visa", "Diners Club"]
+    }
+  },
+
+  // MOBILE FOOTER
+
+  "footer-layout.mobile": {
+    "children": [
+      "flex-layout.row#mid-footer"
+    ]
+  },
+
+  "flex-layout.row#mid-footer": {
+    "props": {
+      "blockClass": "footer-row"
+    },
+    "children": [
+      "flex-layout.col#colFoot"
+    ]
+  },
+
+  "flex-layout.col#colFoot": {
+    "children": [
+      "vtex.menu@2.x:menu#footer"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#footer": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#guitars",
+      "menu-item#effects",
+      "menu-item#photography",
+      "menu-item#stores"
+    ]
+  },
+
+  "menu-item#stores": {
+    "props": {
+      "id": "menu-item-stores",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/stores/",
+        "noFollow": true,
+        "tagTitle": "Locations",
+        "text": "Locations"
+      }
+    }
+  },
+
+  "menu-item#guitars": {
+    "props": {
+      "id": "menu-item-guitars",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "categoryId": 11,
+        "type": "internal",
+        "href": "/guitars",
+        "noFollow": true,
+        "tagTitle": "Guitars",
+        "text": "Guitars"
+      }
+    }
+  },
+
+  "menu-item#effects": {
+    "props": {
+      "id": "menu-item-effects",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "categoryId": "3",
+        "type": "internal",
+        "href": "/amplifiers---effects/effects",
+        "noFollow": true,
+        "tagTitle": "Effects",
+        "text": "Effects"
+      }
+    }
+  },
+  "menu-item#photography": {
+    "props": {
+      "id": "menu-item-photography",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "categoryId": 9,
+        "type": "internal",
+        "href": "/photography",
+        "noFollow": true,
+        "tagTitle": "Photography",
+        "text": "Photography"
+      }
+    }
+  },
+  "menu-item#login": {
+    "props": {
+      "id": "menu-item-custom-login",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/account",
+        "noFollow": true,
+        "tagTitle": "My account",
+        "text": "My account"
+      }
     }
   }
 }

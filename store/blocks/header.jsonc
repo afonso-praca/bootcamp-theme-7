@@ -7,8 +7,25 @@
   },
   "header-layout.desktop": {
     "children": [
-      "sticky-layout#desktop"
+      "header-row#1-desktop",
+      "sticky-layout#desktop",
+      "category-menu" //add categories
     ]
+  },
+  "header-row#1-desktop": {
+    "children": [
+      "header-border",
+      "notification.bar#home"
+    ],
+    "props": {
+      "fullWidth": "true",
+      "zIndex": 777777
+    }
+  },
+  "notification.bar#home": {
+    "props": {
+      "content": "BOOT FASHION"
+    }
   },
   "sticky-layout#desktop": {
     "props": {
@@ -48,7 +65,7 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
+      "url": "https://bootcamp23a.vtexassets.com/assets/vtex.file-manager-graphql/images/9719aacb-eb98-4ce1-9f0f-e7e65fe02443___254547b3d397f205979b3fd77931dffa.png",
       "width": "80"
     }
   },
@@ -75,5 +92,21 @@
   },
   "drawer": {
     "children": []
-  }
+  },
+    "category-menu": { //add categories
+      "props": {
+        "showAllDepartments": false,
+        "showSubcategories": true,
+        "menuDisposition": "center",
+        "departments": [2],
+        "sortSubcategories": "name",
+        "mobileMode":false
+      }
+    },
+    "search-bar":{
+      "props": {
+        "maxWidth":5000,
+        "displayMode": "search-and-clear-buttons"
+      }
+    }
 }
